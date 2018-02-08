@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>ChartJS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <div class="wrapper">
+            <div class="navigationDesktop">
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="#">Analytics</a>
+                            <ul>
+                                <li><a href="perquestion.html">Per Question</a></li>
+                                <li><a href="perbattle.html">Per Battle</a></li>
+                                <li><a href="persession.html">Per Session</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        <section >
+            <div>
+                <label>Select a Student: </label>
+                <select id = "student"></select>
+                <label>Select a Topic</label>
+                <select id = "topic"></select>
+
+            </div>
+
+            <div class = "butwra">
+                <button onclick="butclick()" class="call-btn">Show Data</button>
+            </div>
+            <div class = "boxed">
+                <h1>Remarks:</h1>
+                <!--p id= "mot"></p-->
+                <p>Performed Well</p>
+                
+            </div>
+
+        </section>
+
+
+        <div class = "container">
+            <div class="chart-container">
+                <canvas id="mycanvas"></canvas>
+            </div>
+
+
+            <div class="chart-container">
+                <canvas id="mycanvas1"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="mycanvas2"></canvas>
+            </div>
+
+        </div>        
+	<!-- javascript  -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/persession.js"></script>
+    
+	</div>
+</body> 
+</html>
