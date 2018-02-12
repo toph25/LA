@@ -169,6 +169,7 @@ $(document).ready(function(){
 
                 ]};
             var options1 = {
+                    title: {display:true, text: "Student's Correct and Wrong Answer statistic"},
                     responsive: true,
                     legend: {
                         display: true,
@@ -189,7 +190,12 @@ $(document).ready(function(){
                                 stepSize: 1,
                                 min: 0,
                                 max: 2
-                            } 
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'frequency',
+                                fontColor: "#3949ab"
+                            }
                         }]
                     }
                 };
@@ -211,6 +217,7 @@ $(document).ready(function(){
                 ]};
 
             var options2 = {
+                    title: {display:true, text: "Student's Speed in Answering Question"},
                     responsive: true,
                     legend: {
                         display: true,
@@ -237,7 +244,34 @@ $(document).ready(function(){
                         }]
                     }
                 };
-
+            var options3 = {
+                    title: {display:true, text: "Student's Chosen Difficulty per Question"},
+                    responsive: true,
+                    legend: {
+                        display: true,
+                    },
+                    scales: {
+                        xAxes: [{
+                            autoSkip: false,
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'question number',
+                                fontColor: "#3949ab"
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'frequency',
+                                fontColor: "#3949ab"
+                            }
+                        }]
+                    }
+                };
             var chartdata2 = {
                 labels: actionnum,
                 datasets:[
@@ -286,7 +320,7 @@ $(document).ready(function(){
             BarGraph1 = new Chart(ctx,{
                 type: 'bar',
                 data: chartdata2,
-                options: options1
+                options: options3
             });
 
         },
@@ -351,6 +385,7 @@ $(document).ready(function(){
 
                 ]};
             var options1 = {
+                    title: {display:true, text: "Student's Correct and Wrong Answer statistic"},
                     responsive: true,
                     legend: {
                         display: true,
@@ -371,7 +406,12 @@ $(document).ready(function(){
                                 stepSize: 1,
                                 min: 0,
                                 max: 2
-                            } 
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'frequency',
+                                fontColor: "#3949ab"
+                            }
                         }]
                     }
                 };
@@ -392,6 +432,7 @@ $(document).ready(function(){
 
                 ]};
             var options2 = {
+                    title: {display:true, text: "Student's Speed in Answering Question"},
                     responsive: true,
                     legend: {
                         display: true,
@@ -413,6 +454,34 @@ $(document).ready(function(){
                             scaleLabel: {
                                 display: true,
                                 labelString: 'speed in seconds',
+                                fontColor: "#3949ab"
+                            }
+                        }]
+                    }
+                };
+            var options3 = {
+                    title: {display:true, text: "Student's Chosen Difficulty per Question"},
+                    responsive: true,
+                    legend: {
+                        display: true,
+                    },
+                    scales: {
+                        xAxes: [{
+                            autoSkip: false,
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'question number',
+                                fontColor: "#3949ab"
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'frequency',
                                 fontColor: "#3949ab"
                             }
                         }]

@@ -12,7 +12,7 @@ if(!$mysqli){
 	die("Connection failed: " . $mysqli->error);
 }
 
-$query = sprintf("SELECT * FROM actions ORDER BY Student_ID, Sessionnum, Battlenum, Actionnum");
+$query = sprintf("SELECT * FROM actions ORDER BY Student_ID, Sessionnum, Battlenum, Actionnum, Topic_ID");
 $result = $mysqli->query($query);
 
 $data = array();

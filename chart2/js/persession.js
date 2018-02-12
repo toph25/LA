@@ -170,6 +170,7 @@ $(document).ready(function(){
                 ]};
 
             var options1 = {
+                title: {display:true, text: "Student's Correct and Wrong Answer statistic"},
                     responsive: true,
                     legend: {
                         display: true,
@@ -180,19 +181,25 @@ $(document).ready(function(){
                             display: true,
                             scaleLabel: {
                                 display: true,
-                                labelString: 'session number',
+                                labelString: 'battle number',
                                 fontColor: "#3949ab"
                             }
                         }],
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'score',
+                                fontColor: "#3949ab"
                             }
                         }]
                     }
                 };
 
             var options2 = {
+                    title: {display:true, text: "Student's  Average Speed per Session"},
                     responsive: true,
                     legend: {
                         display: true,
@@ -203,7 +210,7 @@ $(document).ready(function(){
                             display: true,
                             scaleLabel: {
                                 display: true,
-                                labelString: 'session number',
+                                labelString: 'battle number',
                                 fontColor: "#3949ab"
                             }
                         }],
@@ -214,6 +221,35 @@ $(document).ready(function(){
                             scaleLabel: {
                                 display: true,
                                 labelString: 'speed in seconds',
+                                fontColor: "#3949ab"
+                            }
+                        }]
+                    }
+                };
+
+            var options3 = {
+                    title: {display:true, text: "Student's Chosen Difficulty per Session"},
+                    responsive: true,
+                    legend: {
+                        display: true,
+                    },
+                    scales: {
+                        xAxes: [{
+                            autoSkip: false,
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'question number',
+                                fontColor: "#3949ab"
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'frequency',
                                 fontColor: "#3949ab"
                             }
                         }]
@@ -238,7 +274,7 @@ $(document).ready(function(){
             BarGraph1 = new Chart(ctx,{
                 type: 'bar',
                 data: chartdata2,
-                options: options1
+                options: options3
             });
 
         },
@@ -362,6 +398,7 @@ function butclick(){
                 ]};
 
             var options1 = {
+                title: {display:true, text: "Student's Correct and Wrong Answer statistic"},
                     responsive: true,
                     legend: {
                         display: true,
@@ -372,19 +409,25 @@ function butclick(){
                             display: true,
                             scaleLabel: {
                                 display: true,
-                                labelString: 'session number',
+                                labelString: 'battle number',
                                 fontColor: "#3949ab"
                             }
                         }],
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'score',
+                                fontColor: "#3949ab"
                             }
                         }]
                     }
                 };
 
             var options2 = {
+                    title: {display:true, text: "Student's  Average Speed per Battle"},
                     responsive: true,
                     legend: {
                         display: true,
@@ -395,7 +438,7 @@ function butclick(){
                             display: true,
                             scaleLabel: {
                                 display: true,
-                                labelString: 'session number',
+                                labelString: 'battle number',
                                 fontColor: "#3949ab"
                             }
                         }],
@@ -406,6 +449,35 @@ function butclick(){
                             scaleLabel: {
                                 display: true,
                                 labelString: 'speed in seconds',
+                                fontColor: "#3949ab"
+                            }
+                        }]
+                    }
+                };
+
+            var options3 = {
+                    title: {display:true, text: "Student's Chosen Difficulty per Battle"},
+                    responsive: true,
+                    legend: {
+                        display: true,
+                    },
+                    scales: {
+                        xAxes: [{
+                            autoSkip: false,
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'question number',
+                                fontColor: "#3949ab"
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'frequency',
                                 fontColor: "#3949ab"
                             }
                         }]
@@ -432,7 +504,7 @@ function butclick(){
             BarGraph1 = new Chart(ctx,{
                 type: 'bar',
                 data: chartdata2,
-                options: options1
+                options: options3
             });
 
         },
