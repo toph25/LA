@@ -1,0 +1,84 @@
+body{
+    height:100%;
+    /*background:#ddd;*/
+    background: #eeeeee;
+}
+.boxed {
+    background: #424242;
+    height: 15px;   
+}
+
+section {
+  float: left;
+  width: 28%;
+  height: 1100px;
+  background: #bbdefb;
+  margin: 0 auto;
+  padding-top: 15px;
+
+}
+
+.in_select{
+    padding-left: 10px;
+    padding-right: 30px;
+    padding-top: 10px;
+    font-family: sans-serif;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    position: center;
+}
+
+.text{
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.out_text{
+	margin-top: 20px;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+dl dt{
+	list-style-type:circle;
+	background: #e3f2fd;
+	margin: 5px;
+	font-family: sans-serif;
+}
+
+.list_text{
+font-family: sans-serif;
+margin-left: 14%;
+margin-right: 5px;
+margin-top: 5px;
+font-size: 14px;
+}
+
+.button {
+	margin-top: 10px;
+    margin-left: 12.5%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.chart-container {
+    width: 55%;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    background-color:#eeeeee;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #eeeeee;
+}
