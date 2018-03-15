@@ -33,27 +33,30 @@
           <dt>Fast Accurate</dt>
           <dd class="list_text">- student answered the questions WITH EASE</dd>
           <div class="list_text" id = "fa"></div>
-          <a class= "list_text" id= "see1" onclick="seemore1();" href="javascript:void(0);">See More</a>
+          <a class= "list_text" id= "see1" onclick="seemore1()" href="javascript:void(0);">See More</a>
 
           <dt>Fast Inaccurate</dt>
           <dd class="list_text">- there is a high chance that the student was just GUESSING in answering questions</dd>
           <div class="list_text" id = "fi"></div>
-          <a class= "list_text" id= "see2" onclick="seemore2();" href="javascript:void(0);">See More</a> 
+          <a class= "list_text" id= "see2" onclick="seemore2()" href="javascript:void(0);">See More</a> 
 
           <dt>Slow Accurate</dt>
           <dd class="list_text">- student answered the questions with LITTLE ease </dd>
           <div class="list_text" id = "sa"></div>
-          <a class= "list_text" id= "see3" onclick="seemore3();" href="javascript:void(0);">See More</a>
+          <a class= "list_text" id= "see3" onclick="seemore3()" href="javascript:void(0);">See More</a>
 
           <dt>Slow Inaccurate</dt>
           <dd class="list_text">- student STRUGGLED in answering questions</dd>
           <div class="list_text" id = "si"></div>
-          <a class= "list_text" id= "see4" onclick="seemore4();" href="javascript:void(0);">See More</a>
+          <a class= "list_text" id= "see4" onclick="seemore4()" href="javascript:void(0);">See More</a>
         </dl>
       </div>
 
       <div class = "text">Trend</div>
-      <div class="text"><button>CHECK TREND</button></div>
+      <div class="text"><a href="trend.html" class="button" onclick="the_trend()">CHECK TREND</a>
+          <!--button onclick="graph_destroy()">Check Me</button-->
+      </div>
+      <div id='result'></div>
   </section>
 
   <div id="stud_mot" class="out_text"></div>

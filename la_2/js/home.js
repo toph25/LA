@@ -1,4 +1,4 @@
-var student_id;
+var student_id, BarGraph = '', count = 0, moti = '', criteria = [1,1,1,1];
 $(document).ready(function(){
     $.ajax({
         url : "http://localhost/LA/php/student.php",
@@ -15,14 +15,19 @@ $(document).ready(function(){
                 }
                 options += "<option value ='" + data[i].Student_ID + "''>"+  data[i].Student_Name +"</option>";
             }
-
-            document.getElementById("stud_mot").innerHTML=data[0].Student_Name + " is Motivated"
+            thegraph();
+            detect_moti();
+            document.getElementById("stud_mot").innerHTML=data[0].Student_Name + " is " + moti;
             $("#students").append(options);
             $('select#students').on('change', function() {
               //console.log( this.value );
               student_id = this.value;
-              document.getElementById("stud_mot").innerHTML=data[student_id - 1].Student_Name + " is Motivated"
               console.log("clicked Student: " + student_id);
+              thedestroyer();
+              thegraph();
+              detect_moti();
+              console.log("motivation: ",moti);
+              document.getElementById("stud_mot").innerHTML=data[student_id - 1].Student_Name + " is " + moti;
             })
             console.log("student: ", student_id);
         },
@@ -32,6 +37,61 @@ $(document).ready(function(){
 
     });
 
+});
+var s1 = "less", s2 = "less", s3 = "less", s4 = "less";
+function seemore1(){
+    var dd = "<dd>- student answered MORE than 60% of the questions correctly</dd> <dd>- average student speed in answering questions is LESS than 50% of the given time limit</dd>";
+    if (s1 == "less") {
+        document.getElementById("fa").innerHTML=dd;
+        document.getElementById("see1").innerText = "See Less";
+        s1 = "more";
+    } else if (s1 == "more") {
+        document.getElementById("fa").innerHTML = "";
+        document.getElementById("see1").innerText = "See More";
+        s1 = "less"
+    }
+}
+
+function seemore2(){
+    var dd = "<dd>- student answered LESS than 60% of the questions correctly</dd><dd>- average student speed in answering questions is LESS than 50% of the given time limit</dd>";
+    if (s2 == "less") {
+        document.getElementById("fi").innerHTML=dd;
+        document.getElementById("see2").innerText = "See Less";
+        s2 = "more";
+    } else if (s2 == "more") {
+        document.getElementById("fi").innerHTML = "";
+        document.getElementById("see2").innerText = "See More";
+        s2 = "less"
+    }
+}
+
+function seemore3(){
+    var dd = "<dd>- student answered MORE than 60% of the questions correctly</dd> <dd>- average student speed in answering questions is MORE than 50% of the given time limit</dd>";
+    if (s3 == "less") {
+        document.getElementById("sa").innerHTML=dd;
+        document.getElementById("see3").innerText = "See Less";
+        s3 = "more";
+    } else if (s3 == "more") {
+        document.getElementById("sa").innerHTML = "";
+        document.getElementById("see3").innerText = "See More";
+        s3 = "less"
+    }
+}
+
+function seemore4(){
+    var dd = "<dd>- student answered LESS than 60% of the questions correctly</dd> <dd>- average student speed in answering questions is MORE than 60% of the given time limit</dd>";
+    if (s4 == "less") {
+        document.getElementById("si").innerHTML=dd;
+        document.getElementById("see4").innerText = "See Less";
+        s4 = "more";
+    } else if (s4 == "more") {
+        document.getElementById("si").innerHTML = "";
+        document.getElementById("see4").innerText = "See More";
+        s4 = "less"
+    }
+}
+
+function thegraph(){
     $.ajax({
         url : "http://localhost/LA/php/data.php",
         type : "GET",
@@ -316,6 +376,7 @@ $(document).ready(function(){
                     }
                 };
 
+
             var ctx = $("#mycanvas3");
             BarGraph = new Chart(ctx,{
                 type: 'bar',
@@ -328,57 +389,44 @@ $(document).ready(function(){
 
         }
     });
-
-});
-var s1 = "less", s2 = "less", s3 = "less", s4 = "less";
-function seemore1(){
-    var dd = "<dd>- student answered MORE than 60% of the questions correctly</dd> <dd>- average student speed in answering questions is LESS than 50% of the given time limit</dd>";
-    if (s1 == "less") {
-        document.getElementById("fa").innerHTML=dd;
-        document.getElementById("see1").innerText = "See Less";
-        s1 = "more";
-    } else if (s1 == "more") {
-        document.getElementById("fa").innerHTML = "";
-        document.getElementById("see1").innerText = "See More";
-        s1 = "less"
-    }
 }
 
-function seemore2(){
-    var dd = "<dd>- student answered LESS than 60% of the questions correctly</dd><dd>- average student speed in answering questions is LESS than 50% of the given time limit</dd>";
-    if (s2 == "less") {
-        document.getElementById("fi").innerHTML=dd;
-        document.getElementById("see2").innerText = "See Less";
-        s2 = "more";
-    } else if (s2 == "more") {
-        document.getElementById("fi").innerHTML = "";
-        document.getElementById("see2").innerText = "See More";
-        s2 = "less"
-    }
+function thedestroyer(){
+    BarGraph.destroy();
 }
 
-function seemore3(){
-    var dd = "<dd>- student answered MORE than 60% of the questions correctly</dd> <dd>- average student speed in answering questions is MORE than 50% of the given time limit</dd>";
-    if (s3 == "less") {
-        document.getElementById("sa").innerHTML=dd;
-        document.getElementById("see3").innerText = "See Less";
-        s3 = "more";
-    } else if (s3 == "more") {
-        document.getElementById("sa").innerHTML = "";
-        document.getElementById("see3").innerText = "See More";
-        s3 = "less"
+function detect_moti(){
+    console.log("passed detect_moti");
+    if (criteria[0] == 1 && criteria[1] == 1 && criteria[2] == 1 && criteria[3] == 1){
+        console.log("me moti");
+        moti = "MOTIVATED!";
+        criteria = [1,0,1,1];
+    }
+    else if (criteria[0] == 1 && criteria[1] == 0 && criteria[2] == 1 && criteria[3] == 1){
+        console.log("me.unmoti");
+        moti = "UNMOTIVATED";
     }
 }
-
-function seemore4(){
-    var dd = "<dd>- student answered LESS than 60% of the questions correctly</dd> <dd>- average student speed in answering questions is MORE than 60% of the given time limit</dd>";
-    if (s4 == "less") {
-        document.getElementById("si").innerHTML=dd;
-        document.getElementById("see4").innerText = "See Less";
-        s4 = "more";
-    } else if (s4 == "more") {
-        document.getElementById("si").innerHTML = "";
-        document.getElementById("see4").innerText = "See More";
-        s4 = "less"
-    }
+function the_trend(){
+    localStorage.setItem("sid", student_id);  
 }
+/*function the_trend(){
+    $.ajax({
+        //data: 'Student_ID=' + student_id,
+        url: 'http://localhost/LA/php/trend.php',
+        //method: 'POST', // or GET
+        data: {'Student_ID' : student_id},
+        type: 'GET',
+        contentType: 'application/json; charset=utf-8',
+        dataType:'json',
+        success: function(response) {
+            alert(response.status);
+        },
+    });
+    $.post('http://localhost/LA/php/trend.php', {postname: 2}, function(data){
+        $('#result').html(data);
+    });
+    $.post('http://localhost/LA/php/trend.php', {postname: 2}, function(data){
+        $('#result').html(data);
+    });
+}*/
