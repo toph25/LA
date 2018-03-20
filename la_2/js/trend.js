@@ -46,7 +46,7 @@ function the_trend(){
                   data: speed,
                   background: "#ff1744",
                   pointBackgroundColor: difficulty,
-                  borderColor: "#fafafa",
+                  borderColor: "#424242",
                   fill: false,
                   lineTension: 0,
                   pointRadius: 5,

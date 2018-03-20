@@ -13,11 +13,12 @@ $(document).ready(function(){
                     student_id = data[i].Student_ID;
                     console.log(student_id);
                 }
-                options += "<option value ='" + data[i].Student_ID + "''>"+  data[i].Student_Name +"</option>";
+                options += "<option value ='" + data[i].Student_ID + "''>"+ "Student " + data[i].Student_ID +"</option>";
             }
             thegraph();
             detect_moti();
-            document.getElementById("stud_mot").innerHTML=data[0].Student_Name + " is " + moti;
+            //document.getElementById("stud_mot").innerHTML=data[0].Student_Name + " is " + moti;
+            document.getElementById("stud_mot").innerHTML="Student "+ student_id + " is " + moti;
             $("#students").append(options);
             $('select#students').on('change', function() {
               //console.log( this.value );
@@ -27,7 +28,8 @@ $(document).ready(function(){
               thegraph();
               detect_moti();
               console.log("motivation: ",moti);
-              document.getElementById("stud_mot").innerHTML=data[student_id - 1].Student_Name + " is " + moti;
+              //document.getElementById("stud_mot").innerHTML=data[student_id - 1].Student_Name + " is " + moti;
+              document.getElementById("stud_mot").innerHTML="Student "+ student_id + " is " + moti;
             })
             console.log("student: ", student_id);
         },

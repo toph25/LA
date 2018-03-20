@@ -19,13 +19,19 @@ section {
 }
 
 .in_select{
-    padding-left: 10px;
-    padding-right: 30px;
-    padding-top: 10px;
     font-family: sans-serif;
-    margin-left: 50px;
     margin-bottom: 20px;
-    position: center;
+    margin-left: 110px;
+}
+
+select{
+padding-left: 15px;
+padding-right: 20px;
+padding-top: 5px;
+}
+
+option:hover{
+	background: #90caf9;
 }
 
 .text{
@@ -103,5 +109,8 @@ a.button {
 }
 
 .trend{
-	position: absolute; left: 50%;
+	margin-left: 47%;
+    margin-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
